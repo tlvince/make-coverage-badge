@@ -13,17 +13,40 @@
 
 > Create a coverage badge
 
-## Installation
+Creates a code coverage badge like the following:
 
-```shell
-npm install --save make-coverage-badge
-```
+![Coverage badge][coverage-badge]
+
+Currently just reads from Istanbul's JSON summary reporter and downloads a badge from https://shields.io/. Don't expect too much! Send a PR if you need configuration etc.
+
+[coverage-badge]: https://img.shields.io/badge/Coverage-100%-brightgreen.svg
 
 ## Usage
 
-```js
-var makeCoverageBadge = require('make-coverage-badge')
-```
+(For Create React Apps)
+
+1. Configure Jest (in `package.json`):
+
+    ```json
+    "jest": {
+      "coverageReporters": [
+        "json-summary"
+      ]
+    }
+    ```
+
+2. Run `npm test -- --coverage`
+3. Run `make-coverage-badge`
+
+Resulting badge will be in `./coverage/badge.svg`.
+
+## Prior work
+
+* [Coveralls][]: paid for private repos
+* [coverage-badger][]: same approach, but using an XML report and therefore requires XML dependencies
+
+[Coveralls]: https://coveralls.io/
+[coverage-badger]: https://github.com/notnotse/coverage-badger
 
 ## Author
 
