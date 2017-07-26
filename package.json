@@ -1,0 +1,39 @@
+{
+  "name": "make-coverage-badge",
+  "version": "0.0.0",
+  "description": "Create a coverage badge",
+  "main": "cli.js",
+  "bin": "cli.js",
+  "scripts": {
+    "commitmsg": "validate-commit-msg",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlvince/make-coverage-badge.git"
+  },
+  "keywords": [
+    "coverage",
+    "badge",
+    "istanbul"
+  ],
+  "author": "Tom Vincent <git@tlvince.com> (https://tlvince.com)",
+  "engines": {
+    "node": ">=6.11",
+    "npm": ">=5.3"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/make-coverage-badge/issues"
+  },
+  "homepage": "https://github.com/tlvince/make-coverage-badge#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "0.13.3",
+    "standard": "10.0.2",
+    "validate-commit-msg": "2.12.1"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "license": "MIT"
+}
