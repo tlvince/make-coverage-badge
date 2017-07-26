@@ -1,16 +1,17 @@
 {
   "name": "make-coverage-badge",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Create a coverage badge",
   "main": "cli.js",
   "bin": "cli.js",
   "scripts": {
     "commitmsg": "validate-commit-msg",
-    "test": "standard"
+    "test": "standard",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tlvince/make-coverage-badge.git"
+    "url": "https://github.com/tlvince/make-coverage-badge.git"
   },
   "keywords": [
     "coverage",
@@ -30,7 +31,8 @@
   "devDependencies": {
     "husky": "0.13.3",
     "standard": "10.0.2",
-    "validate-commit-msg": "2.12.1"
+    "validate-commit-msg": "2.12.1",
+    "semantic-release": "^6.3.6"
   },
   "files": [
     "cli.js"
