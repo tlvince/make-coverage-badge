@@ -19,7 +19,7 @@ Creates a code coverage badge like the following:
 
 Currently just reads from Istanbul's JSON summary reporter and downloads a badge from https://shields.io/. Don't expect too much! Send a PR if you need configuration etc.
 
-[coverage-badge]: https://img.shields.io/badge/Coverage-100%-brightgreen.svg
+[coverage-badge]: https://img.shields.io/badge/Coverage-100%25-brightgreen.svg
 
 ## Usage
 
