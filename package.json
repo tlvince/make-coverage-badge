@@ -27,9 +27,10 @@
     "url": "https://github.com/tlvince/make-coverage-badge/issues"
   },
   "homepage": "https://github.com/tlvince/make-coverage-badge#readme",
-  "dependencies": {},
+  "dependencies": {
+    "command-line-args": "5.0.2"
+  },
   "devDependencies": {
-    "command-line-args": "5.0.2",
     "husky": "0.13.3",
     "semantic-release": "^6.3.6",
     "standard": "10.0.2",
