@@ -40,6 +40,11 @@ Currently just reads from Istanbul's JSON summary reporter and downloads a badge
 
 Resulting badge will be in `./coverage/badge.svg`.
 
+## Options
+#### `make-coverage-badge --outputPath <path...>`
+
+Creates the svg at the specified path (relative to project root). Defaults to `./coverage/badge.svg`.
+
 ## Prior work
 
 * [Coveralls][]: paid for private repos

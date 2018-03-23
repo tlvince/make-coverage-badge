@@ -29,10 +29,11 @@
   "homepage": "https://github.com/tlvince/make-coverage-badge#readme",
   "dependencies": {},
   "devDependencies": {
+    "command-line-args": "5.0.2",
     "husky": "0.13.3",
+    "semantic-release": "^6.3.6",
     "standard": "10.0.2",
-    "validate-commit-msg": "2.12.1",
-    "semantic-release": "^6.3.6"
+    "validate-commit-msg": "2.12.1"
   },
   "files": [
     "cli.js"
