@@ -38,7 +38,8 @@ const argumentDefinitions = [
   {
     name: 'outputPath',
     type: String,
-  },
+    defaultOption: true
+  }
 ]
 const args = commandLineArgs(argumentDefinitions)
 const outputPath = args.outputPath || './coverage/badge.svg'
@@ -52,7 +53,7 @@ readFile('./coverage/coverage-summary.json', 'utf8', (err, res) => {
     writeFile(outputPath, res, 'utf8', err => {
       if (err) throw err
 
-      console.log('Wrote coverage badge to: ' + outputPath);
+      console.log('Wrote coverage badge to: ' + outputPath)
     })
   })
 })
