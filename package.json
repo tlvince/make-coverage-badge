@@ -1,32 +1,28 @@
 {
-  "name": "make-coverage-badge",
-  "version": "0.0.0-development",
-  "description": "Create a coverage badge",
+  "name": "jest-coverage-badges",
+  "version": "1.0.0",
+  "description": "Create a group of coverage badges from jest",
   "main": "cli.js",
   "bin": "cli.js",
-  "scripts": {
-    "commitmsg": "validate-commit-msg",
-    "test": "standard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tlvince/make-coverage-badge.git"
+    "url": "https://github.com/pamepeixinho/jest-coverage-badges.git"
   },
   "keywords": [
     "coverage",
     "badge",
+    "jest",
     "istanbul"
   ],
-  "author": "Tom Vincent <git@tlvince.com> (https://tlvince.com)",
+  "author": "Pamela Peixinho <git@pamepeixinho.com> (https://pamepeixinho.github.io)",
   "engines": {
     "node": ">=6.11",
     "npm": ">=5.3"
   },
   "bugs": {
-    "url": "https://github.com/tlvince/make-coverage-badge/issues"
+    "url": "https://github.com/pamepeixinho/jest-coverage-badge/issues"
   },
-  "homepage": "https://github.com/tlvince/make-coverage-badge#readme",
+  "homepage": "https://github.com/pamepeixinho/jest-coverage-badge#readme",
   "dependencies": {},
   "devDependencies": {
     "husky": "0.13.3",
