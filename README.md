@@ -32,7 +32,7 @@ Currently just reads from Istanbul's JSON summary reporter and downloads a badge
 
       *Global*:
 
-      ```npm install --global jest-coverage-bagdes```
+      ```npm install --global jest-coverage-badges```
 
 
 2. Configure Jest (in `package.json`):
