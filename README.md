@@ -78,12 +78,6 @@ After this you can add into Github readme (for example) :smiley:
 We have great companies like coveralls and codecov, but it's paid for private repositories. If this package we can add badges in our readme by creating the badges (this can be run at your build, upload to a store and consume in the readme or the website).
 
 
-## Authors
-
-© 2017 **[Main Author of `make-coverage-badge`]** Tom Vincent <git@tlvince.com> (https://tlvince.com) 
+## Author of adaptation of (make-coverage-badge)
 
 © 2018 **[Main Author of Adaptations]** Pamela Peixinho <git@pamepeixinho.com> (https://pamepeixinho.github.io)
-
-## License
-
-Released under the [MIT license](http://tlvince.mit-license.org).
