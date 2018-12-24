@@ -23,14 +23,23 @@
     "url": "https://github.com/pamepeixinho/jest-coverage-badge/issues"
   },
   "homepage": "https://github.com/pamepeixinho/jest-coverage-badge#readme",
+  "scripts": {
+    "lint": "eslint --fix -- ."
+  },
   "dependencies": {
     "mkdirp": "0.5.1"
   },
   "devDependencies": {
+    "eslint": "5.11.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-quintoandar-base": "1.0.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
     "husky": "0.13.3",
+    "semantic-release": "^6.3.6",
     "standard": "10.0.2",
-    "validate-commit-msg": "2.12.1",
-    "semantic-release": "^6.3.6"
+    "validate-commit-msg": "2.12.1"
   },
   "files": [
     "cli.js"
