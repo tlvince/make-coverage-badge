@@ -2,7 +2,6 @@
 
 const { get } = require('https')
 const { readFile, writeFile } = require('fs')
-const commandLineArgs = require('command-line-args')
 
 const getColour = coverage => {
   if (coverage < 80) {
@@ -33,16 +32,8 @@ const download = (url, cb) => {
   }).on('error', err => cb(err))
 }
 
-// Parse command line arguments
-const argumentDefinitions = [
-  {
-    name: 'outputPath',
-    type: String,
-    defaultOption: true
-  }
-]
-const args = commandLineArgs(argumentDefinitions)
-const outputPath = args.outputPath || './coverage/badge.svg'
+const [, , thirdArg, fourthArg] = process.argv
+const outputPath = ((thirdArg === '--output-path' || thirdArg === '--outputPath') && fourthArg) ? fourthArg : './coverage/badge.svg'
 
 readFile('./coverage/coverage-summary.json', 'utf8', (err, res) => {
   if (err) throw err

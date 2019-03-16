@@ -27,13 +27,13 @@ Currently just reads from Istanbul's JSON summary reporter and downloads a badge
 
 1. Configure Jest (in `package.json`):
 
-    ```json
-    "jest": {
-      "coverageReporters": [
-        "json-summary"
-      ]
-    }
-    ```
+```json
+"jest": {
+  "coverageReporters": [
+    "json-summary"
+  ]
+}
+```
 
 2. Run `npm test -- --coverage`
 3. Run `make-coverage-badge`
@@ -41,21 +41,22 @@ Currently just reads from Istanbul's JSON summary reporter and downloads a badge
 Resulting badge will be in `./coverage/badge.svg`.
 
 ## Options
-#### `make-coverage-badge --outputPath <path...>`
 
-Creates the svg at the specified path (relative to project root). Defaults to `./coverage/badge.svg`.
+### `--output-path <path>`
+
+Writes the coverage badge to the given path (relative to project root). Defaults to `./coverage/badge.svg`.
 
 ## Prior work
 
-* [Coveralls][]: paid for private repos
-* [coverage-badger][]: same approach, but using an XML report and therefore requires XML dependencies
+- [Coveralls][]: paid for private repos
+- [coverage-badger][]: same approach, but using an XML report and therefore requires XML dependencies
 
-[Coveralls]: https://coveralls.io/
+[coveralls]: https://coveralls.io/
 [coverage-badger]: https://github.com/notnotse/coverage-badger
 
 ## Author
 
-© 2017 Tom Vincent <git@tlvince.com> (https://tlvince.com)
+© 2019 Tom Vincent <git@tlvince.com> (https://tlvince.com)
 
 ## License
 
