@@ -1,11 +1,9 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
 node_js:
   - '10'
+cache: npm
+notifications:
+  email: false
 after_success:
   - npm run semantic-release
 branches:
