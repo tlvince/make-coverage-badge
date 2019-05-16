@@ -21,7 +21,8 @@ const getBadge = report => {
   const coverage = report.total.statements.pct
   const colour = getColour(coverage)
 
-  return `https://img.shields.io/badge/Coverage-${coverage}${encodeURI('%')}-${colour}.svg`
+  return `https://badgen.net/badge/coverage/${coverage}${encodeURI('%')}/${colour}`;
+  // return `https://img.shields.io/badge/Coverage-${coverage}${encodeURI('%')}-${colour}.svg`
 }
 
 const download = (url, cb) => {
