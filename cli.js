@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { get } = require('https')
+const argv = require('yargs').default('output-path', './coverage/badge.svg').default('report-path', './coverage/coverage-summary.json').argv
 const { readFile, writeFile } = require('fs')
 
 const getColour = coverage => {
@@ -32,19 +33,16 @@ const download = (url, cb) => {
   }).on('error', err => cb(err))
 }
 
-const [, , thirdArg, fourthArg] = process.argv
-const outputPath = ((thirdArg === '--output-path' || thirdArg === '--outputPath') && fourthArg) ? fourthArg : './coverage/badge.svg'
-
-readFile('./coverage/coverage-summary.json', 'utf8', (err, res) => {
+readFile(argv.inputPath, 'utf8', (err, res) => {
   if (err) throw err
   const report = JSON.parse(res)
   const url = getBadge(report)
   download(url, (err, res) => {
     if (err) throw err
-    writeFile(outputPath, res, 'utf8', err => {
+    writeFile(argv.outputPath, res, 'utf8', err => {
       if (err) throw err
 
-      console.log('Wrote coverage badge to: ' + outputPath)
+      console.log('Wrote coverage badge to: ' + argv.outputPath)
     })
   })
 })
