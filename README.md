@@ -46,6 +46,10 @@ Resulting badge will be in `./coverage/badge.svg`.
 
 Writes the coverage badge to the given path (relative to project root). Defaults to `./coverage/badge.svg`.
 
+### `--report-path <path>`
+
+Path to a coverage report file. Defaults to `./coverage/coverage-summary.json`.
+
 ## Prior work
 
 - [Coveralls][]: paid for private repos
