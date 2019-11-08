@@ -2,13 +2,13 @@
 
 Hey! Thanks for your interest in contributing to this project.
 
-In lieu of formal guideline for this project, please familiarise yourself with the following guides:
+In lieu of formal rules, please familiarise yourself with the following guidelines:
 
 - [How to Contribute to Open Source][]
 - [necolas/issue-guidelines][]
 - Tim Pope's [Git commit message model][tpope]
 
-Also note, this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Also note, this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.
 
 In brief, for issues:
 
