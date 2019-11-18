@@ -36,7 +36,7 @@
     "eslint-plugin-prettier": "3.1.1",
     "husky": "3.1.0",
     "prettier": "1.19.1",
-    "semantic-release": "15.13.30",
+    "semantic-release": "15.13.31",
     "validate-commit-msg": "2.14.0"
   },
   "files": [
