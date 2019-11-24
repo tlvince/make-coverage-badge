@@ -1,0 +1,33 @@
+name: Fix lint
+on:
+  push:
+    branches:
+      - dependabot/npm_and_yarn/eslint-*
+      - dependabot/npm_and_yarn/pettier-*
+jobs:
+  update_prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: npm or Yarn install with caching
+        uses: bahmutov/npm-install@v1.1.0
+
+      - name: Fix lint
+        run: npm run lint:fix
+
+      - name: Update PR
+        uses: gr2m/create-or-update-pull-request-action@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: 'Lint fixed'
+          body: 'An update to eslint or prettier required updates to your code.'
+          branch: ${{ github.ref }}
+          commit-message: 'style: fix linting issues'

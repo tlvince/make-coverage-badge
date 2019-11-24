@@ -5,7 +5,10 @@
   "main": "cli.js",
   "bin": "cli.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "lint:fix": "npm run eslint -- --fix && npm run prettier -- --write",
+    "eslint": "eslint '**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier '**/*.{js,jsx,ts,tsx,json,css,md}'",
     "test": "./test.js",
     "semantic-release": "semantic-release"
   },
