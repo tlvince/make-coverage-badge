@@ -5,7 +5,7 @@ on:
       - dependabot/npm_and_yarn/eslint-*
       - dependabot/npm_and_yarn/pettier-*
 jobs:
-  update_prettier:
+  fix-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
