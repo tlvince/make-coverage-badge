@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - dependabot/npm_and_yarn/eslint-*
-      - dependabot/npm_and_yarn/pettier-*
+      - dependabot/npm_and_yarn/prettier-*
 jobs:
   fix-lint:
     runs-on: ubuntu-latest
