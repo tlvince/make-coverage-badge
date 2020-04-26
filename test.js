@@ -36,7 +36,7 @@ const test = async () => {
 setup()
   .then(test)
   .then(teardown)
-  .catch(error => {
+  .catch((error) => {
     console.error(error)
     process.exit(1)
   })

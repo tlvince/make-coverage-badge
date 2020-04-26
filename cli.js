@@ -5,7 +5,7 @@ const { readFile, writeFile } = require('fs')
 const { basename } = require('path')
 const mri = require('mri')
 
-const getColour = coverage => {
+const getColour = (coverage) => {
   if (coverage < 80) {
     return 'red'
   }
@@ -15,7 +15,7 @@ const getColour = coverage => {
   return 'brightgreen'
 }
 
-const getBadge = report => {
+const getBadge = (report) => {
   if (!(report && report.total && report.total.statements)) {
     throw new Error('malformed coverage report')
   }
@@ -29,11 +29,11 @@ const getBadge = report => {
 }
 
 const download = (url, cb) => {
-  get(url, res => {
+  get(url, (res) => {
     let file = ''
-    res.on('data', chunk => (file += chunk))
+    res.on('data', (chunk) => (file += chunk))
     res.on('end', () => cb(null, file))
-  }).on('error', err => cb(err))
+  }).on('error', (err) => cb(err))
 }
 
 const options = {
@@ -66,7 +66,7 @@ readFile(reportPath, 'utf8', (err, res) => {
   const url = getBadge(report)
   download(url, (err, res) => {
     if (err) throw err
-    writeFile(outputPath, res, 'utf8', err => {
+    writeFile(outputPath, res, 'utf8', (err) => {
       if (err) throw err
       console.log('Wrote coverage badge to: ' + outputPath)
     })
