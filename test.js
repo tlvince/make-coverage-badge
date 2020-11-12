@@ -31,6 +31,7 @@ const test = async () => {
   const buffer = await readFile('./coverage/badge.svg')
   const badge = buffer.toString()
   assert.ok(badge.includes('90%'))
+  assert.ok(!badge.includes('<image'))
 }
 
 const logoTest = async () => {
