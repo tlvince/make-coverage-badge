@@ -16,10 +16,12 @@
 Creates a code coverage badge like the following:
 
 ![Coverage badge][coverage-badge]
+![Jest Coverage badge][jest-coverage-badge]
 
 Currently just reads from Istanbul's JSON summary reporter and downloads a badge from https://shields.io/. Don't expect too much! Send a PR if you need configuration etc.
 
 [coverage-badge]: https://img.shields.io/badge/Coverage-100%25-brightgreen.svg
+[jest-coverage-badge]: https://img.shields.io/badge/Coverage-100%25-brightgreen.svg?logo=jest
 
 ## Usage
 
@@ -49,6 +51,10 @@ Writes the coverage badge to the given path (relative to project root). Defaults
 ### `--report-path <path>`
 
 Path to a coverage report file. Defaults to `./coverage/coverage-summary.json`.
+
+### `--logo <logo-string>`
+
+A string defining a logo usable by https://shields.io/. Their documentation has details on using logos. No default.
 
 ## Prior work
 
