@@ -33,8 +33,16 @@ const test = async () => {
   assert.ok(badge.includes('90%'))
 }
 
+const logoTest = async () => {
+  await execP('./cli.js --logo jest')
+  const buffer = await readFile('./coverage/badge.svg')
+  const badge = buffer.toString()
+  assert.ok(badge.includes('<image'))
+}
+
 setup()
   .then(test)
+  .then(logoTest)
   .then(teardown)
   .catch((error) => {
     console.error(error)
