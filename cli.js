@@ -31,6 +31,9 @@ const getBadge = (report) => {
 const download = (url, cb) => {
   get(url, (res) => {
     let file = ''
+    if (res.statusCode > 299) {
+      cb(new Error(`${res.statusCode}: ${res.statusMessage}`), file)
+    }
     res.on('data', (chunk) => (file += chunk))
     res.on('end', () => cb(null, file))
   }).on('error', (err) => cb(err))
