@@ -15,7 +15,7 @@ const getColour = (coverage) => {
   return 'brightgreen'
 }
 
-const getBadge = (report) => {
+const getBadge = (report, logo) => {
   if (!(report && report.total && report.total.statements)) {
     throw new Error('malformed coverage report')
   }
@@ -23,9 +23,15 @@ const getBadge = (report) => {
   const coverage = report.total.statements.pct
   const colour = getColour(coverage)
 
-  return `https://img.shields.io/badge/Coverage-${coverage}${encodeURI(
+  let badgeUrl = `https://img.shields.io/badge/Coverage-${coverage}${encodeURI(
     '%'
   )}-${colour}.svg`
+
+  if (logo) {
+    badgeUrl += `?logo=${logo}`
+  }
+
+  return badgeUrl
 }
 
 const download = (url, cb) => {
@@ -45,6 +51,7 @@ const options = {
     outputPath: 'output-path',
   },
   boolean: 'help',
+  logo: 'string',
   default: {
     'output-path': './coverage/badge.svg',
     'report-path': './coverage/coverage-summary.json',
@@ -56,17 +63,19 @@ const { _, help, ...params } = mri(args, options) // eslint-disable-line no-unus
 
 if (help) {
   console.log(
-    `usage: ${basename(filename)} [-h,--help] [--report-path] [--output-path]`
+    `usage: ${basename(
+      filename
+    )} [-h,--help] [--report-path] [--output-path] [--logo]`
   )
   process.exit()
 }
 
-const { outputPath, 'report-path': reportPath } = params
+const { outputPath, 'report-path': reportPath, logo } = params
 
 readFile(reportPath, 'utf8', (err, res) => {
   if (err) throw err
   const report = JSON.parse(res)
-  const url = getBadge(report)
+  const url = getBadge(report, logo)
   download(url, (err, res) => {
     if (err) throw err
     writeFile(outputPath, res, 'utf8', (err) => {
